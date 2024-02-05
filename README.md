@@ -145,10 +145,10 @@ https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=sha
 
     i. Only when the user is logged in, the membership card will display their name, email, tier and total purchases amount.
     Tier(s):
-        • Bronze: <5,
-        • Silver: 6-10,
-        • Gold: 11-14,
-        • Platinum: 15>
+        • Bronze: <=4,
+        • Silver: >=5 to <=9,
+        • Gold: >=10 to <=14,
+        • Platinum: >=15
 
 ## Credits
 
