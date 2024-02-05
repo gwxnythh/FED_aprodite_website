@@ -123,7 +123,7 @@ aprodité is designed to cater to these user stories by delivering an aestheti
 #### Membership Page: [membership.html]
 
     i. Only when the user is logged in, the membership card will display their name, email, tier and total purchases amount.
-    **__Tier__**
+    Tier(s):
         • Bronze: <5,
         • Silver: 6-10,
         • Gold: 11-14,
