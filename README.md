@@ -136,6 +136,8 @@ Content/Media:
     - Made my own custom Company lottie.
 - [Logo] | [Banners/Ambassador Images] | [Product Images]
     - Custom made using Photoshop.
+- [Icons](https://ionic.io/ionicons)
+    - icons such as favourites, add to cart and shopping cart etc.
 
 Coding Help:
 - [w3schools](https://www.w3schools.com)
