@@ -41,7 +41,7 @@ GitHub Link:
 https://github.com/gwxnythh/FED_aprodite_website
 
 Google Drive Link:
-https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=drive_link
+https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=sharing
 
 
 ## Features
@@ -78,7 +78,9 @@ https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=dri
 
 > [!TIP]
 > If you wanna test an account, you can use this email and password:
+
 > Email: john@gmail.com
+
 > Password: 123
 
 #### General:
