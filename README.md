@@ -32,7 +32,7 @@ aprodité is designed to cater to these user stories by delivering an aestheti
 | --------- | ------------------------------------------ |
 | #EDF3E9   | ![#edf3e9](https://via.placeholder.com/10/edf3e9?text=+) |
 | #C0D9C2   | ![#c0d9c2](https://via.placeholder.com/10/c0d9c2?text=+) |
-| #808077   | ![#808077](https://via.placeholder.com/10/808077?text=+) |
+| #7A7A6F   | ![#7a7a6f](https://via.placeholder.com/10/7a7a6f?text=+) |
 | #88B2AA   | ![#88b2aa](https://via.placeholder.com/10/88b2aa?text=+) |
 
 
