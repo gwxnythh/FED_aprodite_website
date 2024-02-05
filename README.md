@@ -2,6 +2,8 @@
 > [!NOTE]
 > Topic 1: E-Commerce
 
+Slogan: Beauty is Eternal
+
 Welcome to our one-stop beauty shop! Our website offers skincare solutions for people of different ages, genders, ethnicities, and backgrounds. Whether you're a trendsetting woman, a modern man who values grooming necessities, a beauty-conscious young adult, or someone in their elderly years, we've got something for everyone.
 
 We take pleasure in making beauty accessible to everyone by providing high-quality items at reasonable prices. To sweeten the deal, We'll launch an engaging shopping experience complete with gamification features because your beauty routine should be not just effective but also enjoyable! Through the game, users will have to match items to the specific groups, then answer a few questions, they will then be prompt with a voucher code that they can use, else it will display “Try better next time”. Join us on this beauty journey where affordability meets innovation, and each purchase leads to a more radiant you.
