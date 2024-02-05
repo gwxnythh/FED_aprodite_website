@@ -37,6 +37,9 @@ aprodité is designed to cater to these user stories by delivering an aestheti
 | #7A7A6F   | ![#7a7a6f](https://via.placeholder.com/10/7a7a6f?text=+) |
 | #88B2AA   | ![#88b2aa](https://via.placeholder.com/10/88b2aa?text=+) |
 
+GitHub Link:
+https://github.com/gwxnythh/FED_aprodite_website
+
 
 ## Features
 
