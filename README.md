@@ -47,13 +47,17 @@ https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=sha
 ## Features
 
 #### Existing Feature(s):
-    - [ ] Pop-Up Overlay – a pop-up that lets the user know about a game that they can earn vouchers from.
-    - [ ] Quantity Button – lets the user adjust the amount of quantity they would like.
-    - [ ] Add to Cart – lets the user add the product to cart.
-    - [ ] Product – allows user to click on product to see more about the product.
-    - [ ] Account Overlay – allows user to logout.
-    - [ ] Shopping Cart – allow them to finalize their order, remove any product they don’t want.
-    - [ ] Check Out Button - allows the users to check out their order.
+    1. Pop-Up Overlay – a pop-up that lets the user know about a game that they can earn vouchers from.
+    2. Quantity Button – lets the user adjust the amount of quantity they would like.
+    3. Add to Cart – lets the user add the product to cart.
+    4. Product – allows user to click on product to see more about the product.
+    5. Account Overlay – allows user to logout.
+    6. Shopping Cart – allow them to finalize their order, remove any product they don’t want.
+    7. Check Out Button - allows the users to check out their order.
+    8. Discount Codes - allows the user to enter discount codes to get discounts on their items.
+    9. Games - There is a "Memory Card" and "Quiz" game for the user to choose from, each game allows them to win a discount code.
+    10. Membership Card - lets the user to see their name, tier, email and total purchase.
+    11. Leaderboard - As the users purchase an item, their total purchase will increase which helps them to rise in the leaderboard.
 
 ## Technologies Used
 
