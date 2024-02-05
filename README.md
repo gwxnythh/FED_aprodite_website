@@ -40,6 +40,9 @@ aprodité is designed to cater to these user stories by delivering an aestheti
 GitHub Link:
 https://github.com/gwxnythh/FED_aprodite_website
 
+Google Drive Link:
+https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=drive_link
+
 
 ## Features
 
