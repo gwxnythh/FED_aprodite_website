@@ -114,7 +114,20 @@ aprodité is designed to cater to these user stories by delivering an aestheti
     Problems/Bugs: 
     i. When sending an invalid email address but with a message >10 characters, the form is still able to be submitted.
 
-#### Shop Page: [shop.html]
+#### Leaderboard Page: [leaderboard.html]
+
+    i. After user purchase an item, their total purchases will increase by 1 per item, so as they buy more, their total purchases increases.
+    ii. The leaderboard will showcase the user with the highest amount of purchases, ranking 1st to 10th.
+    iii. The leaderboard will showcase the time as of now, or current date whenever.
+
+#### Membership Page: [membership.html]
+
+    i. Only when the user is logged in, the membership card will display their name, email, tier and total purchases amount.
+    Tier(s):
+        • Bronze: <5,
+        • Silver: 6-10,
+        • Gold: 11-14,
+        • Platinum: 15>
 
 ## Credits
 
@@ -123,6 +136,8 @@ Content/Media:
     - Made my own custom Company lottie.
 - [Logo] | [Banners/Ambassador Images] | [Product Images]
     - Custom made using Photoshop.
+- [Icons](https://ionic.io/ionicons)
+    - icons such as favourites, add to cart and shopping cart etc.
 
 Coding Help:
 - [w3schools](https://www.w3schools.com)
