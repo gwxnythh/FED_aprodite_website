@@ -28,12 +28,12 @@ User Stories:
 
 aprodité is designed to cater to these user stories by delivering an aesthetically beautiful, well-organized website with easy navigation. Our platform provides a varied selection of high-quality skincare products, as well as helpful material to help you along your skincare journey. Devoted to satisfying our users' needs and interests, aprodité aspires to be the chosen destination for individuals seeking authentic and practical skincare solutions that combine elegance and efficacy.
 
-| Hex             | Color                                                              |
-| --------------- | ------------------------------------------------------------------ |
-| #EDF3E9 | ![#edf3e9](https://via.placeholder.com/10/edf3e9?text=+) |
-| #C0D9C2 | ![#c0d9c2](https://via.placeholder.com/10/c0d9c2?text=+) |
-| #808077 | ![#808077](https://via.placeholder.com/10/808077?text=+) |
-| #88B2AA | ![#88b2aa](https://via.placeholder.com/10/88b2aa?text=+) |
+| Hex       | Color                                      |
+| --------- | ------------------------------------------ |
+| #EDF3E9   | ![#edf3e9](https://via.placeholder.com/10/edf3e9?text=+) |
+| #C0D9C2   | ![#c0d9c2](https://via.placeholder.com/10/c0d9c2?text=+) |
+| #808077   | ![#808077](https://via.placeholder.com/10/808077?text=+) |
+| #88B2AA   | ![#88b2aa](https://via.placeholder.com/10/88b2aa?text=+) |
 
 
 ## Features
