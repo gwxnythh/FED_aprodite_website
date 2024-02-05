@@ -73,6 +73,13 @@ https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=dri
     - RestDB API is used to allow me to store my customer information from my website into the database, at the same time, i can fetch it to be used for things like tier etc.
 
 ## Testing
+> [!CAUTION]
+> Do give the pages some time to load!!
+
+> [!TIP]
+> If you wanna test an account, you can use this email and password:
+> Email: john@gmail.com
+> Password: 123
 
 #### General:
     i. Navigation Bars are all linked properly and are able to access each other in any of the pagess.
