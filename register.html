@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register - aprodité</title>
+
+	<!-- 
+    - #favicon
+  	-->
+	<link rel="shortcut icon" href="./assets/images/logo/logo-icon.png">
+
+	<!-- 
+    - #css
+  	-->
+	<link rel="stylesheet" href="./assets/css/normalize.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+
+	<!-- 
+    - #font links
+  	-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+</head>
+
+<body class="signinup">
+
+	<div class="signinup-wrapper" style="background-image: url('./assets/images/register-bg.png');">
+		<div class="inner">
+			<div class="image-holder">
+				<img src="./assets/images/register-pic.png" alt="">
+				<p><a href="login.html">Already a Member?</a></p>
+			</div>
+			<form action="">
+				<center><img src="./assets/images/logo/logo.png" alt="logo" class="logo"></center>
+				<h3>Register Now!</h3>
+
+				<div class="form-wrapper">
+					<input id="create-name" type="text" placeholder="Username" class="form-control">
+					<i class="zmdi zmdi-account"></i>
+				</div>
+
+				<div class="form-wrapper">
+					<input id="create-email" type="text" name="email_address" placeholder="Email Address"
+						class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+					<i class="zmdi zmdi-email"></i>
+				</div>
+
+				<div class="form-wrapper">
+					<input id="create-password" type="password" placeholder="Password" class="form-control" required>
+					<i class="zmdi zmdi-lock"></i>
+				</div>
+				<button type="submit" id="register-btn">
+					<a>
+						Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</a>
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- 
+    - #javascript
+  	-->
+	<script src="assets/js/account.js"></script>
+
+</body>
+
+</html>
