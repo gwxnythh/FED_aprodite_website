@@ -2,6 +2,8 @@
 > [!NOTE]
 > Topic 1: E-Commerce
 
+Slogan: Beauty is Eternal
+
 Welcome to our one-stop beauty shop! Our website offers skincare solutions for people of different ages, genders, ethnicities, and backgrounds. Whether you're a trendsetting woman, a modern man who values grooming necessities, a beauty-conscious young adult, or someone in their elderly years, we've got something for everyone.
 
 We take pleasure in making beauty accessible to everyone by providing high-quality items at reasonable prices. To sweeten the deal, We'll launch an engaging shopping experience complete with gamification features because your beauty routine should be not just effective but also enjoyable! Through the game, users will have to match items to the specific groups, then answer a few questions, they will then be prompt with a voucher code that they can use, else it will display “Try better next time”. Join us on this beauty journey where affordability meets innovation, and each purchase leads to a more radiant you.
@@ -35,17 +37,27 @@ aprodité is designed to cater to these user stories by delivering an aestheti
 | #7A7A6F   | ![#7a7a6f](https://via.placeholder.com/10/7a7a6f?text=+) |
 | #88B2AA   | ![#88b2aa](https://via.placeholder.com/10/88b2aa?text=+) |
 
+GitHub Link:
+https://github.com/gwxnythh/FED_aprodite_website
+
+Google Drive Link:
+https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=sharing
+
 
 ## Features
 
 #### Existing Feature(s):
-    - [ ] Pop-Up Overlay – a pop-up that lets the user know about a game that they can earn vouchers from.
-    - [ ] Quantity Button – lets the user adjust the amount of quantity they would like.
-    - [ ] Add to Cart – lets the user add the product to cart.
-    - [ ] Product – allows user to click on product to see more about the product.
-    - [ ] Account Overlay – allows user to logout.
-    - [ ] Shopping Cart – allow them to finalize their order, remove any product they don’t want.
-    - [ ] Check Out Button - allows the users to check out their order.
+    1. Pop-Up Overlay – a pop-up that lets the user know about a game that they can earn vouchers from.
+    2. Quantity Button – lets the user adjust the amount of quantity they would like.
+    3. Add to Cart – lets the user add the product to cart.
+    4. Product – allows user to click on product to see more about the product.
+    5. Account Overlay – allows user to logout.
+    6. Shopping Cart – allow them to finalize their order, remove any product they don’t want.
+    7. Check Out Button - allows the users to check out their order.
+    8. Discount Codes - allows the user to enter discount codes to get discounts on their items.
+    9. Games - There is a "Memory Card" and "Quiz" game for the user to choose from, each game allows them to win a discount code.
+    10. Membership Card - lets the user to see their name, tier, email and total purchase.
+    11. Leaderboard - As the users purchase an item, their total purchase will increase which helps them to rise in the leaderboard.
 
 ## Technologies Used
 
@@ -65,6 +77,15 @@ aprodité is designed to cater to these user stories by delivering an aestheti
     - RestDB API is used to allow me to store my customer information from my website into the database, at the same time, i can fetch it to be used for things like tier etc.
 
 ## Testing
+> [!CAUTION]
+> Do give the pages some time to load!!
+
+> [!TIP]
+> If you wanna test an account, you can use this email and password:
+
+> Email: john@gmail.com
+
+> Password: 123
 
 #### General:
     i. Navigation Bars are all linked properly and are able to access each other in any of the pagess.
@@ -124,10 +145,10 @@ aprodité is designed to cater to these user stories by delivering an aestheti
 
     i. Only when the user is logged in, the membership card will display their name, email, tier and total purchases amount.
     Tier(s):
-        • Bronze: <5,
-        • Silver: 6-10,
-        • Gold: 11-14,
-        • Platinum: 15>
+        • Bronze: <=4,
+        • Silver: >=5 to <=9,
+        • Gold: >=10 to <=14,
+        • Platinum: >=15
 
 ## Credits
 
