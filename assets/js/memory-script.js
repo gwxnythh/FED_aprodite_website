@@ -11,6 +11,14 @@ let disableDeck = false;
 let isPlaying = false;
 let cardOne, cardTwo, timer;
 
+const gameVoucherPromoCodes = [
+    'WINNER20',
+    'NEWYEAR24',
+    'GLOWING',
+    'BEAUTY',
+    'EHNA'
+]
+
 function initTimer() {
     if(timeLeft <= 0) {
         return clearInterval(timer);
@@ -43,6 +51,7 @@ function matchCards(img1, img2) {
     if(img1 === img2) {
         matchedCard++;
         if(matchedCard == 6 && timeLeft > 0) {
+            window.alert("Congratulations! You won the game. Here's your promo code: " + generateCode());
             return clearInterval(timer);
         }
         cardOne.removeEventListener("click", flipCard);
@@ -86,6 +95,10 @@ function shuffleCard() {
         }, 500);
         card.addEventListener("click", flipCard);
     });
+}
+
+function generateCode() {
+    return gameVoucherPromoCodes[Math.floor(Math.random() * gameVoucherPromoCodes.length)]
 }
 
 shuffleCard();
