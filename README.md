@@ -113,6 +113,14 @@ https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=sha
     iv. As you scroll through the page, each section will load up.
 
 #### Shop Page: [shop.html]
+> [!NOTE]
+> When checking out for a certain tier, you can only use these codes:
+
+> Silver: SILVER10OFF
+
+> Gold: GOLD20OFF
+
+> Platinum: PLAT40OFF
 
     i. Filtering Option are working and able to filter via "All Products", "Newest", "Face" & "Hair & Body" .
     ii. All products are able to be added into the shopping bag/cart, able to adjust quantity, the total is also calculated correctly no matter the quantity.
@@ -149,6 +157,14 @@ https://drive.google.com/drive/folders/1hMtMIgNBNZ-kDgqJS1Sl6FDzi4EoOgXk?usp=sha
         • Silver: >=5 to <=9,
         • Gold: >=10 to <=14,
         • Platinum: >=15
+
+#### Game Pages: [game-menu.html | game-memory.html | game-quiz.html ]
+> [!NOTE]
+> Existing Promo Codes (randomly generated): WINNER20, NEWYEAR24, GLOWING, BEAUTY, EHNA, NEWCUSTOMER
+
+    i. Play the games as it is, should all be working.
+    ii. Once you win either game, a prompt will be shown with your random discount promo code.
+    iii. When a promo code has been applied, the total cost in database will also match the cost.
 
 ## Credits
 
