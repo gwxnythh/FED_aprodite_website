@@ -11,6 +11,21 @@ let iconCartSpan = document.querySelector('.cart-icon span');
 let totalPriceSpan = document.querySelector('.shoppingCart .total-price span');
 let closeBtn = document.querySelector('.shoppingCart .check-out');
 
+const tierPromoCodes = [
+    {name : 'SILVER10OFF', discount : 10},
+    {name : 'GOLD20OFF', discount : 20},
+    {name : 'PLAT40OFF', discount : 40},
+]
+
+const gameVoucherPromoCodes = [
+    {name : 'WINNER20', discount : 20},
+    {name : 'NEWYEAR24', discount : 24},
+    {name : 'GLOWING', discount : 5},
+    {name : 'BEAUTY', discount : 7},
+    {name : 'EHNA', discount : 28},
+    {name : 'NEWCUSTOMER', discount : 20},
+]
+
 
 // Retrieve cart data from localStorage if available
 if (localStorage.getItem('cart')) {
@@ -31,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (iconCart) {
         iconCart.addEventListener('click', () => {
             body.classList.toggle('showCart');
+            applyPromoCodeStyling();
         })
     }
 
@@ -121,6 +137,12 @@ function addItemToHtml() {
 
     // Update total quantity and price in the cart icon
     iconCartSpan.innerText = totalQuantity;
+    // check for discounted price
+    let discountedPercentage = 0;
+    if (localStorage.getItem('currentPromoCode')) {
+        discountedPercentage = Number(JSON.parse(localStorage.getItem('currentPromoCode')).discount) / 100;
+        totalPrice = totalPrice * (1 - discountedPercentage);
+    }
     totalPriceSpan.innerText = '$' + Number(totalPrice).toFixed(2);
 }
 
@@ -236,6 +258,12 @@ document.getElementById("checkOut").addEventListener("click", function (e) {
         window.alert("Order Sent!");
         cart = []
         let totalPrice = 0
+        // check for discounted price
+        let discountedPercentage = 0;
+        if (localStorage.getItem('currentPromoCode')) {
+            discountedPercentage = Number(JSON.parse(localStorage.getItem('currentPromoCode')).discount) / 100;
+            totalPrice = totalPrice * (1 - discountedPercentage);
+        }
         totalPriceSpan.innerText = '$' + Number(totalPrice).toFixed(2);
         clearLocalStorage("cart");
     }
@@ -316,6 +344,118 @@ function updateMemberInfo(listOfItems) {
 // Call the function to update member information whenever needed
 // updateMemberInfo();
 
+function getMembershipByName(name) {
+    // Fetch the current membership information
+    fetch(`https://aproditedb-320d.restdb.io/rest/membership?q={"name":"${name}"}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": APIKEY,
+            "Cache-Control": "no-cache",
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Error fetching membership. Status: " + response.status);
+        }
+    })
+    .then(data => {
+        const membership = data.find((member) => member.name === name);
+        if (membership) {
+            return membership;
+        } else {
+            console.log("Member not found");
+        }
+    })
+}
 
 
+document.getElementById("promoCode").addEventListener("click", function (e) {
+    // prevents default action of the button
+    e.preventDefault();
 
+    // Check if promo code is already applied
+    if (localStorage.getItem('currentPromoCode')) {
+        window.alert("Promo code already applied. Please remove the promo code before applying a new one.");
+    }
+
+    if (getAccount() === false) {
+        window.alert("You are not logged in and unable to apply promo code")
+    } else {
+        const promoCode = document.getElementById("promoCodeInput").value;
+        if (isValidPromoCodes(promoCode)) {
+            if (tierPromoCodes.map((promo) => promo.name).includes(promoCode)) {
+                let name = sessionStorage.getItem("name");
+                const membership = getMembershipByName(name);
+                if (membership) {
+                    applyPromoCode(promoCode);
+                }
+            } else if (gameVoucherPromoCodes.map((promo) => promo.name).includes(promoCode)) {
+                applyPromoCode(promoCode);
+            }
+        } else {
+            window.alert("Invalid promo code. Please enter a valid promo code.");
+        }
+    }
+});
+
+document.getElementById("removeCode").addEventListener("click", function (e) {
+    // prevents default action of the button
+    e.preventDefault();
+
+    if (getAccount() === false) {
+        window.alert("You are not logged in and unable to apply promo code")
+    } else {
+        // Check if promo code is already applied
+        if (localStorage.getItem('currentPromoCode')) {
+            localStorage.removeItem('currentPromoCode');
+            applyPromoCodeStyling();
+            addItemToHtml();
+            var inputPromoCode = document.getElementById('promoCodeInput');
+            inputPromoCode.value = '';
+        }
+    }
+});
+
+function applyPromoCodeStyling() {
+    var showNode;
+    var hideNode;
+    if(localStorage.getItem("currentPromoCode")) {
+        showNode = document.getElementById('applied-promo-code');
+        hideNode = document.getElementById('input-promo-code');
+        let promoCodeObject = JSON.parse(localStorage.getItem("currentPromoCode"));
+        previewPromoCode.placeholder = promoCodeObject.name;
+    } else {
+        showNode = document.getElementById('input-promo-code');
+        hideNode = document.getElementById('applied-promo-code');
+    }
+    showNode.style.visibility = 'visible';
+    showNode.style.display = 'grid'
+    hideNode.style.visibility = 'hidden';
+    hideNode.style.display = 'none'
+}
+
+function applyPromoCode(promoCode) {
+    let promoCodeObject = getPromoCodeObject(promoCode);
+    localStorage.setItem('currentPromoCode', JSON.stringify(promoCodeObject));
+    applyPromoCodeStyling()
+    let previewPromoCode = document.getElementById('previewPromoCode');
+    previewPromoCode.placeholder = promoCodeObject.name;
+    window.alert("Promo code applied successfully!");
+    addItemToHtml();
+}
+
+function isValidPromoCodes(promoCode) {
+    let validPromoCodes = [...tierPromoCodes, ...gameVoucherPromoCodes].map((promo) => promo.name);
+    return validPromoCodes.includes(promoCode);
+}
+
+function getPromoCodeObject(promoCode) {
+    if (tierPromoCodes.map((promo) => promo.name).includes(promoCode)) {
+        return tierPromoCodes.find((promo) => promo.name === promoCode);
+    } else if (gameVoucherPromoCodes.map((promo) => promo.name).includes(promoCode)) {
+        return gameVoucherPromoCodes.find((promo) => promo.name === promoCode);
+    }
+}
