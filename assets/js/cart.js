@@ -218,6 +218,10 @@ document.getElementById("checkOut").addEventListener("click", function (e) {
         // grabs each item in the cart and send to database
         cart.forEach((item) => {
             var itemPrice = Number(item.price * item.quantity).toFixed(2);
+            if (localStorage.getItem('currentPromoCode')) {
+                var discountedPercentage = Number(JSON.parse(localStorage.getItem('currentPromoCode')).discount) / 100;
+                itemPrice = Number(item.price * item.quantity * (1 - discountedPercentage)).toFixed(2)
+            }
 
             let jsondata = {
                 name: sessionStorage.getItem("name"),
@@ -266,6 +270,12 @@ document.getElementById("checkOut").addEventListener("click", function (e) {
         }
         totalPriceSpan.innerText = '$' + Number(totalPrice).toFixed(2);
         clearLocalStorage("cart");
+        // Clear current promo code
+        clearLocalStorage("currentPromoCode");
+        applyPromoCodeStyling();
+        addItemToHtml();
+        var inputPromoCode = document.getElementById('promoCodeInput');
+        inputPromoCode.value = '';
     }
 });
 
@@ -344,9 +354,9 @@ function updateMemberInfo(listOfItems) {
 // Call the function to update member information whenever needed
 // updateMemberInfo();
 
-function getMembershipByName(name) {
+async function getMembershipByName(name) {
     // Fetch the current membership information
-    fetch(`https://aproditedb-320d.restdb.io/rest/membership?q={"name":"${name}"}`, {
+    return await fetch(`https://aproditedb-320d.restdb.io/rest/membership?q={"name":"${name}"}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -387,11 +397,7 @@ document.getElementById("promoCode").addEventListener("click", function (e) {
         const promoCode = document.getElementById("promoCodeInput").value;
         if (isValidPromoCodes(promoCode)) {
             if (tierPromoCodes.map((promo) => promo.name).includes(promoCode)) {
-                let name = sessionStorage.getItem("name");
-                const membership = getMembershipByName(name);
-                if (membership) {
-                    applyPromoCode(promoCode);
-                }
+                applyMemberPromoCode(promoCode);
             } else if (gameVoucherPromoCodes.map((promo) => promo.name).includes(promoCode)) {
                 applyPromoCode(promoCode);
             }
@@ -400,6 +406,22 @@ document.getElementById("promoCode").addEventListener("click", function (e) {
         }
     }
 });
+
+async function applyMemberPromoCode(promoCode) {
+    const name = sessionStorage.getItem("name");
+    const membership = await getMembershipByName(name);
+    if (membership) {
+        if (membership.tier === "silver" && promoCode === "SILVER10OFF") {
+            applyPromoCode(promoCode);
+        } else if (membership.tier === "gold" && (promoCode === "GOLD20OFF" || promoCode === "SILVER10OFF")) {
+            applyPromoCode(promoCode);
+        } else if (membership.tier === "gold" && (promoCode === "GOLD20OFF" || promoCode === "SILVER10OFF" || promoCode === "PLAT40OFF")) {
+            applyPromoCode(promoCode);
+        } else {
+            window.alert("You are not eligible for this promo code.");
+        }
+    }
+}
 
 document.getElementById("removeCode").addEventListener("click", function (e) {
     // prevents default action of the button
